@@ -6,7 +6,8 @@ class App extends Component {
     return (
       <div classname="App">
         <Stylesheet />
-        <h1>Hello People</h1>.
+        <h1>Hello People</h1>
+        <input type="text" />
       </div>
     );
   }
