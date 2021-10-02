@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import Stylesheet from './components/stylesheet'
 
 import Footer from "./components/Footer/Footer.js";
+import DataGrid from 'react-data-grid';
 
 const stockpriceURL = 'https://yahoo-finance-api.vercel.app/Z';
 async function getStocks() {
@@ -9,6 +10,20 @@ async function getStocks() {
   return response.json();
 }
 
+
+const columns = [
+  { key: 'id', name: 'ID' },
+  { key: 'title', name: 'Title' }
+];
+
+const rows = [
+  { id: 0, title: 'Example' },
+  { id: 1, title: 'Demo' }
+];
+
+function GridThing() {
+  return <DataGrid columns={columns} rows={rows} />;
+}
 
 
 function App() {
@@ -26,8 +41,7 @@ function App() {
     return(
       <div>
         <Stylesheet />  
-        <h1>{price}</h1>
-      
+        <GridThing />
         <div>
           <Footer fluid />
         </div>
